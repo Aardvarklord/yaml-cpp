@@ -150,7 +150,7 @@ generate_export_header(yaml-cpp
 
 configure_file(yaml-cpp.pc.in yaml-cpp.pc @ONLY)
 
-if (YAML_CPP_INSTALL)
+#if (YAML_CPP_INSTALL)
 	install(TARGETS yaml-cpp
     EXPORT yaml-cpp-targets
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
@@ -170,7 +170,7 @@ if (YAML_CPP_INSTALL)
     DESTINATION "${CMAKE_INSTALL_DATADIR}/cmake/yaml-cpp")
   install(FILES "${PROJECT_BINARY_DIR}/yaml-cpp.pc"
     DESTINATION ${CMAKE_INSTALL_DATADIR}/pkgconfig)
-endif()
+#endif()
 
 if(YAML_CPP_BUILD_TESTS)
 	add_subdirectory(test)
